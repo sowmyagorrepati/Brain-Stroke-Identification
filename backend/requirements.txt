@@ -5,4 +5,4 @@ opencv-python
 numpy
 python-multipart
 pillow
-python-multipart
+gdown
