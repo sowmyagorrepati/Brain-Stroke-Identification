@@ -1,3 +1,5 @@
+const API_URL = "https://brain-stroke-identification.onrender.com/predict";
+
 const imageInput = document.getElementById("imageInput");
 const preview = document.getElementById("preview");
 const loading = document.getElementById("loading");
@@ -22,7 +24,7 @@ async function analyzeImage() {
   formData.append("file", file);
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/predict", {
+    const response = await fetch(API_URL, {
       method: "POST",
       body: formData
     });
