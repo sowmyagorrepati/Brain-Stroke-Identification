@@ -71,3 +71,6 @@ async def predict(file: UploadFile = File(...)):
         "confidence": round(confidence * 100, 2),
         "gradcam": gradcam_hex
     }
+@app.get("/")
+def health():
+    return {"status": "Brain Stroke Detection API is running"}
