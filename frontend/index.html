@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brain Stroke Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Brain Stroke Detection System</h1>
+  <p>CT Scan Analysis with Explainable AI</p>
+</header>
+
+<main class="dashboard">
+
+  <!-- LEFT: Upload -->
+  <section class="card">
+    <h2>Upload CT Scan</h2>
+
+    <input type="file" id="imageInput" accept="image/*">
+    <img id="preview" alt="CT Preview">
+
+    <button onclick="analyzeImage()">Analyze Scan</button>
+
+    <p id="loading">Analyzing CT scan, please wait…</p>
+  </section>
+
+  <!-- CENTER: Grad-CAM -->
+  <section class="card">
+    <h2>Grad-CAM Visualization</h2>
+
+    <img id="gradcam" alt="Grad-CAM Output">
+
+    <!-- Color Legend -->
+    <div class="legend">
+      <div><span class="box red"></span> High relevance (important region)</div>
+      <div><span class="box yellow"></span> Moderate relevance</div>
+      <div><span class="box blue"></span> Low relevance</div>
+    </div>
+  </section>
+
+  <!-- RIGHT: Report -->
+  <section class="card report">
+    <h2>Clinical AI Report</h2>
+
+    <p><strong>Prediction:</strong><br>
+      <span id="prediction">—</span>
+    </p>
+
+    <p><strong>Confidence:</strong><br>
+      <span id="confidence">—</span> %
+    </p>
+
+    <div class="confidence-bar">
+      <div id="confidenceFill"></div>
+    </div>
+
+    <hr>
+
+    <h3>AI Explanation</h3>
+    <p id="explanation">
+      Upload a CT scan to view AI-based interpretation.
+    </p>
+
+    <button class="print" onclick="window.print()">Print Report</button>
+  </section>
+
+</main>
+
+<footer>
+  This system is intended for research and decision support only.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

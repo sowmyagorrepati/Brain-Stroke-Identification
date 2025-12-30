@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# OS files
+.DS_Store
+
+# Model files (optional but recommended)
+*.keras
+*.h5
+
+# VS Code
+.vscode/
